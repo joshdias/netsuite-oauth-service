@@ -11,11 +11,11 @@ POST /generate-oauth
 
 ## Example Body
 {
-  "account_id": "TSTDRV629200",
+  "account_id": "",
   "consumer_key": "...",
   "consumer_secret": "...",
   "token_id": "...",
   "token_secret": "...",
-  "base_url": "https://tstdrv629200.suitetalk.api.netsuite.com/services/rest/query/v1/suiteql",
+  "base_url": "https://{{account_id}}.suitetalk.api.netsuite.com/services/rest/query/v1/suiteql",
   "http_method": "POST"
 }
