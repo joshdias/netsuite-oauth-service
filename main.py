@@ -89,3 +89,9 @@ def generate_oauth(req: OAuthRequest):
         "signature": signature,
         "base_string": base_string
     }
+import uvicorn
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 3000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
