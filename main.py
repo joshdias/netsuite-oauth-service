@@ -35,6 +35,10 @@ def percent_encode(val: str) -> str:
 @app.post("/generate-oauth")
 def generate_oauth(req: OAuthRequest):
 
+    # STEP 0 — Build Base URL from Account ID
+    account_id_normalized = req.account_id.lower()
+    BASE_URL = f"https://{account_id_normalized}.suitetalk.api.netsuite.com/services/rest/query/v1/suiteql"
+
     # STEP 1 — OAuth params
     oauth_params = {
         "oauth_consumer_key": req.consumer_key,
